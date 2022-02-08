@@ -39,11 +39,18 @@ print ("_ " * len(word_to_guess))
 
 # STEP 4
 # ask the user to type a letter
-input("Type a letter:").lower()
 # here you should validate if the typed letter is the word 
 # "quit", "Quit", "QUit", "QUIt", "QUIT", "QuIT"... you get the idea :)
 # HINT: use the upper() or lower() built-in Python functions
-
+letter = input("Type a letter:").lower()
+while True:
+    if letter == "quit":
+        print("Quit működik") 
+        #ide kell majd a quit kódja még 
+    elif len(letter) != 1:
+        letter = input("Please type only one letter:")
+        continue
+    break        
 
 # STEP 5
 # validate if the typed letter is already in the tried letters
@@ -51,8 +58,12 @@ input("Type a letter:").lower()
 # If it is not, than append to the tried letters
 # If it has already been typed, return to STEP 5. HINT: use a while loop here
 already_tried_letters = [] # this list will contain all the tried letters
-
-
+if letter in already_tried_letters:
+    print("You've already guessed this letter. Heres your previous geusses:")
+    print(already_tried_letters)
+else:
+    already_tried_letters.append(letter)
+    
 # STEP 6
 # if the letter is present in the word iterate through all the letters in the variable
 # word_to_guess. If that letter is present in the already_tried_letters then display it,
