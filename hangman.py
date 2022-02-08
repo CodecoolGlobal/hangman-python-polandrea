@@ -1,15 +1,24 @@
 # PART 1
 # display a menu with at least 3 difficulty choices and ask the user
+from fcntl import LOCK_WRITE
+
+
 with open('/home/polandrea/Dokumentumok/GitHub/projects/hangman-python-polandrea/menu.txt') as f:
   content = f.read()
   print(content)
 difficulty = input("Choose difficulty:")
 # to select the desired level
-difficulty = "1" # sample data, normally the user should choose the difficulty
+#difficulty = "1" # sample data, normally the user should choose the difficulty
 
 
 # STEP 2
 # based on the chosen difficulty level, set the values 
+if difficulty == 1:
+    lives = 7
+elif difficulty == 2:
+    lives = 5
+elif difficulty == 3:
+    lives = 3
 # for the player's lives
 word_to_guess = "Cairo" # sample data, normally the word should be chosen from the countries-and-capitals.txt
 lives = 5 # sample data, normally the lives should be chosen based on the difficulty
@@ -18,10 +27,11 @@ lives = 5 # sample data, normally the lives should be chosen based on the diffic
 # STEP 3
 # display the chosen word to guess with all letters replaced by "_"
 # for example instead of "Cairo" display "_ _ _ _ _"
-
+print ("_ " * len(word_to_guess))
 
 # STEP 4
 # ask the user to type a letter
+input("Type a letter:").lower()
 # here you should validate if the typed letter is the word 
 # "quit", "Quit", "QUit", "QUIt", "QUIT", "QuIT"... you get the idea :)
 # HINT: use the upper() or lower() built-in Python functions
