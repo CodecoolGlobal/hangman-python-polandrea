@@ -13,12 +13,20 @@ difficulty = input("Choose difficulty:")
 
 # STEP 2
 # based on the chosen difficulty level, set the values 
-if difficulty == 1:
-    lives = 7
-elif difficulty == 2:
-    lives = 5
-elif difficulty == 3:
-    lives = 3
+invalid_input = True
+while invalid_input == True:
+    if difficulty == "1":
+        lives = 7
+        invalid_input = False
+    elif difficulty == "2":
+        lives = 5
+        invalid_input = False
+    elif difficulty == "3":
+        lives = 3
+        invalid_input = False
+    else:
+        difficulty = input("Please type the number of difficulty:")
+        continue
 # for the player's lives
 word_to_guess = "Cairo" # sample data, normally the word should be chosen from the countries-and-capitals.txt
 lives = 5 # sample data, normally the lives should be chosen based on the difficulty
