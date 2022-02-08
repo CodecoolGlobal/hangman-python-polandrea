@@ -1,5 +1,9 @@
 # PART 1
 # display a menu with at least 3 difficulty choices and ask the user
+with open('/home/polandrea/Dokumentumok/GitHub/projects/hangman-python-polandrea/menu.txt') as f:
+  content = f.read()
+  print(content)
+difficulty = input("Choose difficulty:")
 # to select the desired level
 difficulty = "1" # sample data, normally the user should choose the difficulty
 
