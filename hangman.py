@@ -31,6 +31,7 @@ def display_room():
 # PART 1
 # display a menu with at least 3 difficulty choices and ask the user
 from fcntl import LOCK_WRITE
+from xml.sax.handler import EntityResolver
 
 
 with open('menu.txt') as f:
@@ -108,7 +109,9 @@ if letter in word_to_guess:
     modified_word = word_to_guess.lower()
     for i in range(len(word_to_guess)):
         if word_to_guess[i] != letter:
-            modified_word = modified_word.replace(word_to_guess[i], "_")
+            if word_to_guess[i] not in already_tried_letters:
+                modified_word = modified_word.replace(word_to_guess[i], "_")
+            break
         else:
             continue
     print(" ".join((modified_word))
@@ -118,6 +121,7 @@ if letter in word_to_guess:
 # or draw a new beautiful one on your own.
 
 else:
+    print(letter, "is not in the word.")
     lives = lives - 1
     display_room()
     
