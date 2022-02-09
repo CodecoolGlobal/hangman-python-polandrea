@@ -1,9 +1,39 @@
+def display_room():
+    if lives == 7:
+        with open('rooms/ascii szoba (7).txt') as room:
+            content = room.read()
+            print(content)
+    if lives == 6:
+        with open('rooms/ascii szoba (6).txt') as room:
+            content = room.read()
+            print(content)
+    if lives == 5:
+        with open('rooms/ascii szoba (5).txt') as room:
+            content = room.read()
+            print(content)
+    if lives == 4:
+        with open('rooms/ascii szoba (4).txt') as room:
+            content = room.read()
+            print(content)
+    if lives == 3:
+        with open('rooms/ascii szoba (3).txt') as room:
+            content = room.read()
+            print(content)
+    if lives == 2:
+        with open('rooms/ascii szoba (2).txt') as room:
+            content = room.read()
+            print(content)
+    if lives == 1:
+        with open('rooms/ascii szoba (1).txt') as room:
+            content = room.read()
+            print(content)
+            
 # PART 1
 # display a menu with at least 3 difficulty choices and ask the user
 from fcntl import LOCK_WRITE
 
 
-with open('/home/polandrea/Dokumentumok/GitHub/projects/hangman-python-polandrea/menu.txt') as f:
+with open('menu.txt') as f:
   content = f.read()
   print(content)
 difficulty = input("Choose difficulty:")
@@ -17,12 +47,18 @@ invalid_input = True
 while invalid_input == True:
     if difficulty == "1":
         lives = 7
+        print("Here is your starting room:")
+        display_room()
         invalid_input = False
     elif difficulty == "2":
         lives = 5
+        print("Here is your starting room:")
+        display_room()
         invalid_input = False
     elif difficulty == "3":
         lives = 3
+        print("Here is your starting room:")
+        display_room()
         invalid_input = False
     else:
         difficulty = input("Please type the number of difficulty:")
@@ -68,18 +104,11 @@ else:
 # if the letter is present in the word iterate through all the letters in the variable
 # word_to_guess. If that letter is present in the already_tried_letters then display it,
 # otherwise display "_".
-
-
-# if the letter is not present in the word decrease the value in the lives variable
-# and display a hangman ASCII art. You can search the Internet for "hangman ASCII art",
-# or draw a new beautiful one on your own.
-
-
-
-# STEP 7
-# check if the variable already_tried_letters already contains all the letters necessary
-# to build the value in the variable word_to_guess. If so display a winning message and exit
-# the app.
-# If you still have letters that are not guessed check if you have a non negative amount of lives
-# left. If not print a loosing message and exit the app.
-# If neither of the 2 conditions mentioned above go back to STEP 4
+if letter in word_to_guess:
+    modified_word = word_to_guess.lower()
+    for i in range(len(word_to_guess)):
+        if word_to_guess[i] != letter:
+            modified_word = modified_word.replace(word_to_guess[i], "_")
+        else:
+            continue
+    print(" ".join((modified_word))
