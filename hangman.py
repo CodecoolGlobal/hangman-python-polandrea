@@ -115,7 +115,8 @@ while game_over == False:
         lives -= 1        
         display_room()
         print(" ".join(already_tried_letters))
-        continue
+        if lives != 0:
+            continue
     # STEP 7
     # check if the variable already_tried_letters already contains all the letters necessary
     # to build the value in the variable word_to_guess. If so display a winning message and exit
@@ -123,9 +124,9 @@ while game_over == False:
     # If you still have letters that are not guessed check if you have a non negative amount of lives
     # left. If not print a loosing message and exit the app.
     # If neither of the 2 conditions mentioned above go back to STEP 4
-    if modified_word == word_to_guess.lower():
-        print(f"Good job {word_to_guess} is the word!")
-        game_over = True
-    elif lives == 0:
+    if lives == 0:
         print(f"Sorry, you lost. The word was {word_to_guess} Maybe next time.")
+        game_over = True
+    elif modified_word == word_to_guess.lower():
+        print(f"Good job {word_to_guess} is the word!")
         game_over = True
