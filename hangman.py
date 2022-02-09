@@ -112,3 +112,20 @@ if letter in word_to_guess:
         else:
             continue
     print(" ".join((modified_word))
+
+# if the letter is not present in the word decrease the value in the lives variable
+# and display a hangman ASCII art. You can search the Internet for "hangman ASCII art",
+# or draw a new beautiful one on your own.
+
+else:
+    lives = lives - 1
+    display_room()
+    
+    
+# STEP 7
+# check if the variable already_tried_letters already contains all the letters necessary
+# to build the value in the variable word_to_guess. If so display a winning message and exit
+# the app.
+# If you still have letters that are not guessed check if you have a non negative amount of lives
+# left. If not print a loosing message and exit the app.
+# If neither of the 2 conditions mentioned above go back to STEP 4
