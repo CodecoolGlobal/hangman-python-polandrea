@@ -1,15 +1,1 @@
-Malm,
-Kallax,
-Lack,
-Frakta,
-Dinera,
-Klippan,
-Ullerslev,
-Billy,
-Hemnes,
-Eket,
-Brimnes,
-Pax,
-Micke,
-Pokal,
-Huvudroll
+Malm Kallax Lack Frakta Dinera Klippan Ullerslev Billy Hemnes Eket Brimnes Pax Micke Pokal Huvudroll

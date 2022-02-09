@@ -61,7 +61,7 @@ while invalid_input == True:
 # Open the file in read mode
 import random
     # print random string
-word_to_guess = random.choice(open("countries-and-capitals.txt","r").readline().split())
+word_to_guess = random.choice(open("ikea_wordlist.txt","r").readline().split())
 # sample data, normally the word should be chosen from the countries-and-capitals.txt
 # sample data, normally the lives should be chosen based on the difficulty
 # STEP 3
