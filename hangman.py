@@ -99,14 +99,14 @@ while game_over == False:
     # if the letter is present in the word iterate through all the letters in the variable
     # word_to_guess. If that letter is present in the already_tried_letters then display it,
     # otherwise display "_".
-    modified_word = word_to_guess.lower()
+    modified_word = word_to_guess
     if letter in word_to_guess.lower():
         for i in range(len(word_to_guess)):
-            if word_to_guess[i] != letter:
-                if word_to_guess[i] not in already_tried_letters:
+            if word_to_guess.lower()[i] != letter:
+                if word_to_guess.lower()[i] not in already_tried_letters:
                     modified_word = modified_word.replace(word_to_guess[i], "_")
                     continue
-        print(" ".join((modified_word)))  
+        print(" ".join((modified_word)))
     # if the letter is not present in the word decrease the value in the lives variable
     # and display a hangman ASCII art. You can search the Internet for "hangman ASCII art",
     # or draw a new beautiful one on your own.
@@ -127,6 +127,6 @@ while game_over == False:
     if lives == 0:
         print(f"Sorry, you lost. The word was {word_to_guess} Maybe next time.")
         game_over = True
-    elif modified_word == word_to_guess.lower():
+    elif modified_word == word_to_guess:
         print(f"Good job {word_to_guess} is the word!")
         game_over = True
